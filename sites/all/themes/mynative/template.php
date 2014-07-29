@@ -66,12 +66,11 @@ function mynative_preprocess_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/*
+
 function mynative_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
 
   // Optionally, run node-type-specific preprocess functions, like
-  // mynative_preprocess_node_page() or mynative_preprocess_node_story().
+   mynative_preprocess_node_page() or mynative_preprocess_node_story().
   $function = __FUNCTION__ . '_' . $variables['node']->type;
   if (function_exists($function)) {
     $function($variables, $hook);
@@ -79,11 +78,11 @@ function mynative_preprocess_node(&$variables, $hook) {
 
 
 }
-*/
+
 
 function mynative_preprocess_node_place(&$variables, $hook) {
   dpm($varialbes['node']);
-  $variables['googlemap'] = 'Testing googlemap';
+  $variables['googlemap'] = 'Testing googlemap' . '';
 
 }
 
