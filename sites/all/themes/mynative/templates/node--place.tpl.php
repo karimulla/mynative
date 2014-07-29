@@ -35,9 +35,15 @@
     hide($content['comments']);
     hide($content['links']);
     print render($content);
-    print "Testing";
+    
   ?>
-
+  <?php 
+   $HTML = "";
+   if(isset($node->field_longitude['und'][0]['value'] && isset($node->field_latitude['und'][0]['value'])) {
+    $HTML = '<img src="http://maps.googleapis.com/maps/api/staticmap?center=' . $node->field_longitude['und'][0]['value'] . ',' . $node->field_latitude['und'][0]['value']) . '&zoom=12&size=300x300"/>';
+   }
+  ?>
+   <?php print $HTML;?>
   <?php print render($content['links']); ?>
 
   <?php print render($content['comments']); ?>
