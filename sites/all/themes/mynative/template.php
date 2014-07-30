@@ -66,7 +66,7 @@ function mynative_preprocess_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-
+/*
 function mynative_preprocess_node(&$variables, $hook) {
 
   // Optionally, run node-type-specific preprocess functions, like
@@ -81,11 +81,11 @@ function mynative_preprocess_node(&$variables, $hook) {
 
 
 function mynative_preprocess_node_place(&$variables, $hook) {
-  dpm($variables['node']);
+  //dpm($variables['node']);
 
 }
 
-
+*/
 
 
 /**

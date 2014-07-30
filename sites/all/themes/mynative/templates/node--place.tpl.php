@@ -6,7 +6,13 @@
  * Complete documentation for this file is available online.
  * @see https://drupal.org/node/1728164
  */
+
+global $theme_path;
+$theme_path = '/sites/all/themes/mynative/';
+drupal_add_css($theme_path . '/css/place.css', 'file');
+
 ?>
+
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
@@ -17,16 +23,6 @@
       <?php endif; ?>
       <?php print render($title_suffix); ?>
 
-      <?php if ($display_submitted): ?>
-        <p class="submitted">
-          <?php print $user_picture; ?>
-          <?php print $submitted; ?>
-        </p>
-      <?php endif; ?>
-
-      <?php if ($unpublished): ?>
-        <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
-      <?php endif; ?>
     </header>
   <?php endif; ?>
 
@@ -39,11 +35,21 @@
   ?>
   <?php 
    $HTML = "";
-   if(isset($node->field_longitude['und'][0]['value'] && isset($node->field_latitude['und'][0]['value'])) {
-    $HTML = '<img src="http://maps.googleapis.com/maps/api/staticmap?center=' . $node->field_longitude['und'][0]['value'] . ',' . $node->field_latitude['und'][0]['value']) . '&zoom=12&size=300x300"/>';
+   if(!$is_front && isset($node->field_longitude['und'][0]['value']) && isset($node->field_latitude['und'][0]['value'])) {
+    $HTML = '<img src="http://maps.googleapis.com/maps/api/staticmap?center=' . $node->field_latitude['und'][0]['value'] . ',' . $node->field_longitude['und'][0]['value'] . '&zoom=12&size=300x300"/><br/>';
    }
   ?>
-   <?php print $HTML;?>
+  <?php print $HTML;?>
+  <?php if ($display_submitted): ?>
+        <p class="submitted">
+          <?php print $user_picture; ?>
+          <?php print $submitted; ?>
+        </p>
+      <?php endif; ?>
+
+      <?php if ($unpublished): ?>
+        <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
+      <?php endif; ?>
   <?php print render($content['links']); ?>
 
   <?php print render($content['comments']); ?>
