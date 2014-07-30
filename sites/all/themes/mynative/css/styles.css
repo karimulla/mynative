@@ -20,3 +20,8 @@
 /* SMACSS theme rules */
 /* @import "theme-A.css"; */
 /* @import "theme-B.css"; */
+
+.field .field-label {
+    background-color: #bef781;
+    font-weight: bold;
+}

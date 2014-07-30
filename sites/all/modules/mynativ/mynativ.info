@@ -1,0 +1,5 @@
+name = Mynativ
+description = mynative module
+package = Mynative
+core = 7.x
+
