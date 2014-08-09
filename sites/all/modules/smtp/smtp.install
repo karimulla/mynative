@@ -9,15 +9,7 @@
  * Implements hook_install().
  */
  function smtp_install() {
-   variable_set('smtp_on', 1);
-   variable_set('smtp_from', 'mynative.org');
-   variable_set('smtp_fromname', 'User Name');
-   variable_set('smtp_host', 'smtp.gmail.com');
-   variable_set('smtp_username', 'mynative.org');
-   variable_set('smtp_password', '2bismillah');
-   variable_set('smtp_port', '587');
-   variable_set('smtp_protocol', 'tls');
-   variable_set('smtp_test_address', 'karimulla@gmail.com');
+   variable_set('smtp_on', 0);
  }
 
 /**
